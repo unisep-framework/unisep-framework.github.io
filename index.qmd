@@ -1,3 +1,9 @@
+---
+title: "On the Transferability and Accessibility of Human Movement Data"
+format: html
+---
+![](pics/logo_placement.png){ width="20%" class=center }
+
 # A Standardized Framework for Sensor Placement in Human Motion Capture
 
 ::: {.callout-note}
