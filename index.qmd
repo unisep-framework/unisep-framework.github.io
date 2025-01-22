@@ -1,4 +1,8 @@
-# On the Transferability and Accessibility of Human Movement Data
+---
+title: "On the Transferability and Accessibility of Human Movement Data"
+format: html
+---
+![](pics/logo_placement.png){ width="20%" class=center }
 
 # Introduction
 
@@ -9,6 +13,44 @@ Motion capture generally involves acquiring motion-related physical quantities (
 Each motion capture method has limitations, impacting the interpretability and transferability of data from one modality to another. To address these limitations, we propose a precise annotation of features affecting the quality of motion capture interpretation.
 
 In this manuscript, we will briefly describe the main features of each modality and introduce a set of definitions that we will use throughout. We finally propose a scheme for unified sensor placement annotation with quantifiable levels of precision. We try to align this scheme with the currently available standards for data sharing and annotation, namely the **[Brain Imaging Data Structure (BIDS)](https://bids.neuroimaging.io/)** and the **[Hierarchical Event Descriptors (HED)](https://www.hedtags.org/)**. See [Motion-BIDS](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/motion.html) and definition of body parts in [HED schema browser](https://www.hedtags.org/display_hed.html) for relevant details. 
+
+<style>
+/* Style the button to appear as a box */
+.centered-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh; /* Vertically center */
+  margin: 0; /* Remove default margin */
+}
+
+.button-box {
+  background-color: #4CAF50; /* Replace with your desired color */
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.button-box:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarges on hover */
+}
+</style>
+
+<div class="centered-button">
+  <a href="subpage.html" class="button-box">Landmark table</a>
+</div>
+
+
+
 
 # Types of Motion Capture
 ## Optical Motion Capture (OMC)
