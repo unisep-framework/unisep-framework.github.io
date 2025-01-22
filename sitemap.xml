@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://human-sensor-placement.github.io/authors.html</loc>
-    <lastmod>2025-01-22T11:30:45.722Z</lastmod>
-  </url>
-  <url>
-    <loc>https://human-sensor-placement.github.io/index.html</loc>
-    <lastmod>2025-01-22T11:30:45.722Z</lastmod>
-  </url>
-  <url>
     <loc>https://human-sensor-placement.github.io/paper.html</loc>
-    <lastmod>2025-01-22T11:30:45.722Z</lastmod>
+    <lastmod>2025-01-22T11:31:14.877Z</lastmod>
   </url>
   <url>
     <loc>https://human-sensor-placement.github.io/LICENSE.html</loc>
-    <lastmod>2025-01-22T11:30:45.721Z</lastmod>
+    <lastmod>2025-01-22T11:31:14.877Z</lastmod>
+  </url>
+  <url>
+    <loc>https://human-sensor-placement.github.io/authors.html</loc>
+    <lastmod>2025-01-22T11:31:14.877Z</lastmod>
+  </url>
+  <url>
+    <loc>https://human-sensor-placement.github.io/index.html</loc>
+    <lastmod>2025-01-22T11:31:14.877Z</lastmod>
   </url>
   <url>
     <loc>https://human-sensor-placement.github.io/anatomical_table.html</loc>
-    <lastmod>2025-01-22T11:30:45.721Z</lastmod>
+    <lastmod>2025-01-22T11:31:14.877Z</lastmod>
   </url>
 </urlset>
