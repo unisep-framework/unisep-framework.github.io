@@ -1,34 +1,42 @@
 ---
-title: "On the Transferability and Accessibility of Human Movement Data"
 format: html
+title-doi: 10.48550/arXiv.2412.21159
 ---
-![](pics/logo_placement.png){ width="20%" class=center }
 
-# A Standardized Framework for Sensor Placement in Human Motion Capture
+<style>
+.custom-title {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  margin: 2em 0;
+}
+.custom-title img {
+  width: 80px;
+  height: auto;
+  order: -1; /* Ensures image is always first */
+}
+.custom-title h1 {
+  margin: 0;
+  font-size: 2em;
+  line-height: 1.3;
+}
+</style>
+
+<div class="custom-title">
+<img src="pics/logo_placement.png" alt="Logo">
+<h1>A Standardized Framework for Sensor Placement in Human Motion Capture</h1>
+</div>
+
 
 ::: {.callout-note}
-This website presents a unified framework for sensor placement in human motion capture and wearable applications. For the complete research paper, please visit our preprint on [ArXiv](https://doi.org/10.48550/arXiv.2412.21159).
+This website presents a unified framework for sensor placement in human motion capture and wearable applications. For the complete research paper, please visit our preprint on [arXiv](https://doi.org/10.48550/arXiv.2412.21159).
 :::
 
 ## Introduction
 
 The proliferation of wearable sensors and monitoring technologies has created an urgent need for standardized sensor placement protocols. While existing standards like SENIAM address specific applications, there is no comprehensive framework that spans different sensing modalities and applications. We present a unified sensor placement standard that ensures reproducibility and transferability of human movement data across different recording systems and research domains.
 
-## Fundamentals
-
-### Reference Frames and Coordinate Systems
-
-A **reference frame** consists of an origin point and a set of axes that define directions in space. In human movement analysis, we encounter multiple reference frames:
-
-1. **Global laboratory frame**: The fixed reference frame of the measurement space
-2. **Anatomical frames**: Tied to specific body segments
-3. **Sensor-specific frames**: Related to individual sensor positioning
-
-A **coordinate system** is fully described by:
-1. The origin relative to which coordinates are expressed
-2. The interpretation of the three axes
-3. The units in which measurements are expressed
-
+At the heart of this framework, **the anatomical landmark table** provides a comprehensive list of palpable landmarks and their precise locations on the human body. These landmarks serve as reliable reference points for consistent sensor positioning across different applications and operators.
 
 <style>
 /* Style the button to appear as a box */
@@ -36,14 +44,13 @@ A **coordinate system** is fully described by:
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 20vh; /* Vertically center */
-  margin: 0; /* Remove default margin */
+  margin: 3em 0em; /* Reduced vertical spacing */
 }
 
 .button-box {
   background-color: #4CAF50; /* Replace with your desired color */
   color: white;
-  padding: 15px 30px;
+  padding: 15px 15px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -64,6 +71,22 @@ A **coordinate system** is fully described by:
 <div class="centered-button">
   <a href="anatomical_table.html" class="button-box">Landmark table</a>
 </div>
+
+## Fundamentals
+
+### Reference Frames and Coordinate Systems
+
+A **reference frame** consists of an origin point and a set of axes that define directions in space. In human movement analysis, we encounter multiple reference frames:
+
+1. **Global laboratory frame**: The fixed reference frame of the measurement space
+2. **Anatomical frames**: Tied to specific body segments
+3. **Sensor-specific frames**: Related to individual sensor positioning
+
+A **coordinate system** is fully described by:
+1. The origin relative to which coordinates are expressed
+2. The interpretation of the three axes
+3. The units in which measurements are expressed
+
 
 
 ### Hierarchical Structure
