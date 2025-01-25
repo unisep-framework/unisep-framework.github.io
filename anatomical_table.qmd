@@ -1,4 +1,7 @@
-# Human Body Segmentation
+---
+title: "Anatomical Table"
+format: html
+---
 
 ![Modified Hanavan model, see [Hatze 1980](https://doi.org/10.1016/0021-9290(80)90171-2)](pics/ilustrations/Whole_body.jpeg){width="15%"}
 
