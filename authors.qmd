@@ -13,17 +13,17 @@ title: "Authors"
 ## Sein Jeung
 Sein is investigating human spatial cognition using mobile EEG at the [Berlin Mobile Brain-Body Imaging Lab](https://blogs.tu-berlin.de/bpn_bemobil/) & [Doellerlab](https://doellerlab.com/). She is a dedicated Open Science enthusiast!
 
-![](pics/sein.jpg){ width=50% class=center }
+![](pics/sein.jpg){ width=30% class=center }
 
 ## Julius Welzel
-Julius has completed his masters in 2019 in Cognitive Neuropsychology in Oldenburg, Germany and is still pursuing his PhD in Kiel, Germany where he started building a Open Science EEG lab based in the deparment of Neurology. He has a daughter which you can meet at conferences or in one of his many Zoom calls. 
+Julius has completed his PhD in Cognitive Neuropsychology in Oldenburg and in Kiel, Germany. He started building a Open Science EEG lab based in the deparment of Neurology. He has a daughter which you can meet at conferences or in one of his many Zoom calls. 
 
-![](pics/julius.jpg){ width="50%" class=center }
+![](pics/julius.jpg){ width="30%" class=center }
 
 ## Seyed (Yahya) Shirazi
 Yahya is an Assistant Project Scientist at the [Swartz center for Computational Neuroscience](https://sccn.ucsd.edu) working hard to make the MOBI world a better place.
 
-![](pics/yahya.jpg){ width="50%" class=center }
+![](pics/yahya.jpg){ width="30%" class=center }
 
 ## Lara Godbersen
 Lara is a Master student at the Kiel University. She is interested in the field of cognitive neuroscience and just finished her master thesis with advanced EEG processing.

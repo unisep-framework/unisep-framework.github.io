@@ -24,9 +24,11 @@ title-doi: 10.48550/arXiv.2412.21159
 
 <div class="custom-title">
 <img src="pics/logo_placement.png" alt="Logo">
-<h1>A Standardized Framework for Sensor Placement in Human Motion Capture</h1>
+<h1>UNISEP - UNIfied SEnsor Placement Framework</h1>
+
 </div>
 
+## A Standardized Framework for Sensor Placement in Human Motion Capture
 
 ::: {.callout-note}
 This website presents a unified framework for sensor placement in human motion capture and wearable applications. For the complete research paper, please visit our preprint on [arXiv](https://doi.org/10.48550/arXiv.2412.21159).
