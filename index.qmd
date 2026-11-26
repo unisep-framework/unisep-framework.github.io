@@ -110,6 +110,20 @@ We define precise anatomical coordinate systems for each body segment using palp
 The complete **anatomical landmark table** with detailed coordinate systems for all body segments is available [here](./anatomical_table.qmd).
 :::
 
+### Axis convention
+
+All segment coordinate systems follow one right-handed convention. In the anatomical position (upright stance, arms at the sides, palms facing forward), X points to the subject's right, Y anteriorly and Z superiorly. For each axis, the landmark that defines 0 % and the landmark that defines 100 % are chosen so that the axis points in this direction. If the limits of an axis are exchanged, coordinates on that axis convert as u_new = 100 − u_old.
+
+### Formal definition
+
+For each segment, the landmark table specifies for each axis k ∈ {X, Y, Z} the landmark (or landmark midpoint) $A_k$ that defines 0 % and the landmark $B_k$ that defines 100 % of that axis. The unit vectors $e_X$, $e_Y$ and $e_Z$ form a right-handed orthonormal basis. The primary axis is the unit vector between its two landmarks. The second axis is obtained from its landmark pair — or, for the thorax, from the longitudinal axis of the body in the anatomical position — by removing the component parallel to the primary axis (Gram–Schmidt orthogonalization). The third axis is the cross product of the first two, taken in the order that makes the system right-handed. The normalized coordinate of a point $P$ along axis $k$ is
+
+$$u_k(P) = 100\,\% \cdot \frac{(P - A_k)\cdot e_k}{(B_k - A_k)\cdot e_k},$$
+
+that is, the projection of $P$ onto the axis, expressed as a percentage of the projected distance between the two limiting landmarks. Values outside 0–100 % are admissible and denote positions beyond the landmark limits. Because each axis has its own limiting landmarks, a segment has no single three-dimensional origin. Where an axis is bounded by body surfaces rather than bony landmarks (e.g., the dorsal and palmar surfaces of the hand at the midpoint between the styloid processes), these surface points take the role of $A_k$ and $B_k$.
+
+A reference implementation of these definitions is available in the [`unisep` Python package](https://github.com/unisep-framework/unisep-framework.github.io/tree/main/unisep) of the repository.
+
 ### Placement Principles
 
 Our unified placement scheme follows these core principles:
@@ -136,6 +150,8 @@ We define three levels of placement precision:
    - Placement defined by 3D scanning body parts
    - Limited by scanner resolution and alignment ability
 
+These values are nominal classes that describe the intended resolution of each method; they are not empirically established accuracies, and their empirical calibration is planned. For a thigh segment of 40 cm, ±10 % corresponds to ±4 cm and ±5 % to ±2 cm along the longitudinal axis.
+
 ### Standardized Annotation
 
 Sensor placement should be documented using a standardized format that includes:
@@ -153,12 +169,53 @@ An exemplar annotation following the general HED instructions can be represented
 ```
 (Body-part, (X-position/#, Y-position/#, Z-position/#), Precision)
 ```
-(note that the exact HED tags are under development under [HED-SLAM](https://www.hedtags.org/display_hed_prerelease.html?schema=slam_prerelease))
+The HED strings shown are illustrative. HED tags for sensor placement are being developed in the [HED-SLAM](https://www.hedtags.org/display_hed_prerelease.html?schema=slam_prerelease) library schema and are not part of version 0.2.
+
+A machine-readable reference schema for placement records and the controlled vocabularies are described on the [Schema & vocabularies](schema.qmd) page; worked examples for EMG-BIDS, a cross-modal foot setup and an ECG electrode are on the [Use cases](use_cases.qmd) page.
 
 This standardization framework represents a significant step toward improving data quality, reproducibility, and interoperability in human movement analysis, from clinical biomechanics to continuous health monitoring.
 
+## Scope of version 0.2
+
+UNISEP version 0.2 specifies the position of a sensor, electrode or marker on a body segment at the time of placement (static, nominal placement). It does not specify sensor orientation, for which reporting recommendations are given below. It does not model the displacement of sensors relative to the underlying bone during movement, such as soft-tissue artefact or slippage, which is a property of the recording rather than of the placement description. Its segment-level granularity is not intended to replace established high-density schemes, such as the 10–20 family of systems for scalp EEG, to which UNISEP defers.
+
+## Sensor orientation — reporting recommendations (non-normative)
+
+Version 0.2 does not define a normative orientation convention. Until it does, report orientation as follows. (1) If a sensor is mounted with its axes nominally aligned with the segment axes, report the alignment as a signed axis mapping (e.g., sensor x → segment +Z, sensor y → segment −X) together with the precision of the alignment. (2) Otherwise, report the sensor-to-segment calibration procedure (static posture, functional movements or anatomical landmarks) following the ISB recommendations for IMU-based joint kinematics (Cereatti et al., 2024, <https://doi.org/10.1016/j.jbiomech.2024.112225>).
+
+## Relationship to existing standards
+
+UNISEP is a compatibility layer — a common spatial language — and not a meta-standard. Within a single modality, the established domain standard takes precedence for the placement procedure: SENIAM or the muscle-specific literature for surface EMG electrodes, the 10–20 family of systems for scalp EEG, the ISB recommendations for joint kinematics, and the Mason–Likar configuration for exercise ECG. UNISEP is used (a) to encode placements made according to any of these standards in machine-readable form, recording the standard in `StandardReference`, and (b) to describe placements that no domain standard covers, in particular when sensors of different modalities on the same segment must be related to each other. Three rules apply. *Precedence:* where a high-density standard exists, it remains the primary description, and positions are stored in the format of the respective data standard (e.g., BIDS EEG). *Hierarchical coordinate systems:* electrode grids and arrays are described in a device-internal child coordinate system in millimetres, anchored in the UNISEP segment coordinate system (as in EMG-BIDS). *Graceful degradation:* where neither applies (e.g., single sensors on the fingers or the face), the sensor is described at segment level with the precision the measurement method allows, the precision level is recorded, and the anatomical sub-location is added as free text or HED annotation.
+
+### Head fiducials and the 10–20 system
+
+| UNISEP fiducial | 10–20 / BIDS EEG | Relationship |
+|---|---|---|
+| Nasion | Nz (10–20); NAS (BIDS) | Same landmark |
+| Inion | Iz (10–20) | Same landmark |
+| Left/right helix–tragus junction (LHJ, RHJ) | Left/right preauricular point (LPA, RPA) | Not identical: the preauricular point lies anterior to the tragus; do not substitute without documenting it |
+| Vertex | ≈ Cz | Cz is defined by arc proportions; approximately coincident in upright head posture, not identical by definition |
+| Midpoint between the mastoid processes (MMP) | — | No 10–20 counterpart |
+
+10–20 positions are proportions along curved scalp arcs, whereas UNISEP coordinates are projections onto straight axes; individual electrode positions therefore cannot be converted exactly between the two systems.
+
+## Glossary
+
+| Term | Definition |
+|---|---|
+| Anatomical position | Upright stance, arms at the sides, palms facing forward; reference posture for all axis directions |
+| Landmark (fiducial) | Palpable anatomical point used to define axes and their limits |
+| Segment coordinate system | Three orthogonal, right-handed axes defined for one body segment by its landmarks |
+| Axis limits | The landmarks (or surface points) that define 0 % and 100 % of an axis |
+| Normalized coordinate | Position along an axis as a percentage of the projected distance between its limits; values outside 0–100 % are admissible |
+| Precision level | Nominal resolution class of the measurement method (Level 1–3) |
+| Placement record | Machine-readable description of one sensor position (see the reference schema) |
+| Surrogate landmark | Documented replacement for an inaccessible landmark (e.g., the heel counter of a shoe for the calcaneal tuberosity) |
+| Parent and child coordinate systems | A device-internal (child) coordinate system, e.g., of an electrode grid, anchored in an anatomical (parent) segment coordinate system |
+| Joint-marker rule | A joint marker is annotated in the coordinate system of the proximal segment |
+
 ## How to Contribute
-**Contributions**: We welcome contributions to this framework from the research community. Please submit your suggestions and feedback via the [GitHub repository](https://github.com/human-sensor-placement/human-sensor-placement.github.io) Issues section. 
+**Contributions**: We welcome contributions to this framework from the research community. Please submit your suggestions and feedback via the [GitHub repository](https://github.com/unisep-framework/unisep-framework.github.io) Issues section.
 
 There are specific areas where we seek contributions:
 
@@ -166,3 +223,13 @@ There are specific areas where we seek contributions:
 - Validation studies for inter-operator reliability assessment
 - Mappings between this framework and existing standards (such as SENIAM)
 - Software tools for coordinate calculation and placement visualization
+
+## How to cite
+
+If you use UNISEP, please cite the framework using the metadata in [`CITATION.cff`](https://github.com/unisep-framework/unisep-framework.github.io/blob/main/CITATION.cff) of the repository:
+
+> Welzel, J., Jeung, S., Romijnders, R., Maetzler, W., Godbersen, L., & Shirazi, S. Y. *UNISEP: A Unified Sensor Placement Framework for Human Motion Capture and Wearables* (version 0.2.0). <https://unisep-framework.github.io>
+
+- Zenodo concept DOI (all versions): [10.5281/zenodo.14603935](https://doi.org/10.5281/zenodo.14603935)
+- Version DOI for 0.2.0: TBD
+- Preprint: [arXiv:2412.21159](https://doi.org/10.48550/arXiv.2412.21159)
