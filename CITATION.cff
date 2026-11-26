@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use UNISEP, please cite it using the metadata from this file."
+title: "UNISEP: A Unified Sensor Placement Framework for Human Motion Capture and Wearables"
+type: software
+version: 0.2.0
+# Version DOI for 0.2.0: TBD (assigned by Zenodo on release; add it as `doi:` then).
+authors:
+  - given-names: Julius
+    family-names: Welzel
+  - given-names: Sein
+    family-names: Jeung
+  - given-names: Robbin
+    family-names: Romijnders
+  - given-names: Walter
+    family-names: Maetzler
+  - given-names: Lara
+    family-names: Godbersen
+  - given-names: Seyed Yahya
+    family-names: Shirazi
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.14603935
+    description: "Zenodo concept DOI (all versions)"
+  - type: doi
+    value: 10.48550/arXiv.2412.21159
+    description: "arXiv preprint (version 1, 2024)"
+repository-code: "https://github.com/unisep-framework/unisep-framework.github.io"
+url: "https://unisep-framework.github.io"
+license: MIT
+keywords:
+  - sensor placement
+  - motion capture
+  - wearables
+  - EMG
+  - IMU
+  - BIDS

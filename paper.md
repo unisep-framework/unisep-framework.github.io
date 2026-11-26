@@ -1,3 +1,5 @@
+> This page reproduces the arXiv preprint (version 1, 2024). The definitions of version 0.2.0 on this website supersede the preprint where they differ.
+
 # A Standardized Framework for Sensor Placement in Human Motion Capture and Wearable Applications
 **Published on arXiv: [2412.21159](https://arxiv.org/abs/2412.21159)**
 
