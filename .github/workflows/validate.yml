@@ -28,5 +28,8 @@ jobs:
       - name: Check landmark-table changes against the 0.1.1 inventory
         run: python scripts/compare_inventory.py
 
+      - name: Check the global axis convention of the landmark table
+        run: python scripts/check_conventions.py
+
       - name: Run tests
         run: python -m pytest -v
