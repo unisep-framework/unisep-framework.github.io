@@ -1,5 +1,8 @@
 project:
   type: website
+  resources:
+    - schema/**
+    - examples/**
 
 website:
   navbar:
@@ -8,6 +11,10 @@ website:
         text: Home
       - href: anatomical_table.qmd
         text: Landmark table
+      - href: use_cases.qmd
+        text: Use cases
+      - href: schema.qmd
+        text: Schema & vocabularies
       - href: authors.qmd
         text: Authors
 

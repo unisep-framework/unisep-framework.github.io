@@ -1,0 +1,5 @@
+{
+  "EMGCoordinateSystem": "Other",
+  "EMGCoordinateUnits": "percent",
+  "EMGCoordinateSystemDescription": "UNISEP right thigh (segment 10). X: femur medial epicondyle (0%) to femur lateral epicondyle (100%); Y: popliteal fossa (0%) to anterior patellar surface (100%); Z: midpoint of the femoral epicondyles (0%) to greater trochanter (100%). Definition: https://unisep-framework.github.io"
+}

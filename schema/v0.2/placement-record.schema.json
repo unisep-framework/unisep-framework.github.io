@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://unisep-framework.github.io/schema/v0.2/placement-record.schema.json",
+  "title": "UNISEP placement record (reference schema, non-normative)",
+  "description": "Position of one sensor, electrode or marker in UNISEP segment coordinates.",
+  "type": "object",
+  "required": ["BodySegment", "Coordinates", "CoordinateUnits", "MeasurementMethod"],
+  "properties": {
+    "SensorName": { "type": "string" },
+    "SensorType": { "type": "string", "description": "e.g. IMU, EMG electrode, OMC marker, ECG electrode" },
+    "BodySegment": { "enum": ["Head", "Neck", "Torso-chest", "Abdomen", "Upper-arm",
+                              "Forearm", "Hand", "Thigh", "Lower-leg", "Foot"] },
+    "Side": { "enum": ["left", "right"] },
+    "SegmentIndex": { "type": "integer", "minimum": 1, "maximum": 15 },
+    "Coordinates": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": { "type": ["number", "null"] },
+      "description": "Normalized X, Y, Z in percent of the axis; null if not determined."
+    },
+    "CoordinateUnits": { "const": "percent" },
+    "MeasurementMethod": { "enum": ["visual_estimate", "tape_measure", "caliper", "digitizer_3d",
+                                    "optical_motion_capture", "surface_scan_3d", "template", "other"] },
+    "PrecisionLevel": { "enum": [1, 2, 3] },
+    "LandmarkIdentification": { "enum": ["palpation", "visual_inspection", "digitized", "surrogate"] },
+    "SurrogateLandmarks": { "type": "object", "additionalProperties": { "type": "string" } },
+    "StandardReference": { "type": "string" },
+    "HED": { "type": "string", "description": "Illustrative until the HED-SLAM library schema is released." },
+    "Description": { "type": "string" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "BodySegment": { "enum": ["Upper-arm", "Forearm", "Hand",
+                                                         "Thigh", "Lower-leg", "Foot"] } },
+              "required": ["BodySegment"] },
+      "then": { "required": ["Side"] },
+      "else": { "not": { "required": ["Side"] } }
+    },
+    {
+      "if": { "properties": { "LandmarkIdentification": { "const": "surrogate" } },
+              "required": ["LandmarkIdentification"] },
+      "then": { "required": ["SurrogateLandmarks"] }
+    },
+    {
+      "if": { "properties": { "MeasurementMethod": { "const": "other" } },
+              "required": ["MeasurementMethod"] },
+      "then": { "required": ["Description"] }
+    }
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,44 @@
+{
+  "UNISEPVersion": "0.2.0",
+  "UNISEPPlacements": {
+    "OMC_Heel_M4": {
+      "SensorType": "OMC marker",
+      "BodySegment": "Foot",
+      "Side": "right",
+      "SegmentIndex": 14,
+      "Coordinates": [50, 0, 50],
+      "CoordinateUnits": "percent",
+      "MeasurementMethod": "visual_estimate",
+      "PrecisionLevel": 1,
+      "LandmarkIdentification": "surrogate",
+      "SurrogateLandmarks": { "CT": "posterior aspect of the shoe heel counter" },
+      "Description": "Registered to the posterior heel counter."
+    },
+    "OMC_Toe_M3": {
+      "SensorType": "OMC marker",
+      "BodySegment": "Foot",
+      "Side": "right",
+      "SegmentIndex": 14,
+      "Coordinates": [50, 100, 30],
+      "CoordinateUnits": "percent",
+      "MeasurementMethod": "visual_estimate",
+      "PrecisionLevel": 1,
+      "LandmarkIdentification": "surrogate",
+      "SurrogateLandmarks": { "CT": "posterior aspect of the shoe heel counter" },
+      "Description": "Registered to the dorsal-anterior shoe surface."
+    },
+    "IMU_Lateral_M5": {
+      "SensorType": "IMU",
+      "BodySegment": "Foot",
+      "Side": "right",
+      "SegmentIndex": 14,
+      "Coordinates": [100, 25, 80],
+      "CoordinateUnits": "percent",
+      "MeasurementMethod": "visual_estimate",
+      "PrecisionLevel": 1,
+      "LandmarkIdentification": "surrogate",
+      "SurrogateLandmarks": { "CT": "posterior aspect of the shoe heel counter" },
+      "Description": "Inferior to the lateral malleolus."
+    }
+  }
+}

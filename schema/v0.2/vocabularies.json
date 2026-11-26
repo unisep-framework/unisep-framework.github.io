@@ -1,0 +1,109 @@
+{
+  "version": "0.2.0",
+  "MeasurementMethod": [
+    {
+      "value": "visual_estimate",
+      "description": "Position estimated by eye relative to the landmarks",
+      "nominalPrecisionLevel": 1
+    },
+    {
+      "value": "tape_measure",
+      "description": "Distances to the landmarks measured with a flexible tape",
+      "nominalPrecisionLevel": 2
+    },
+    {
+      "value": "caliper",
+      "description": "Distances measured with a caliper or anthropometer",
+      "nominalPrecisionLevel": 2
+    },
+    {
+      "value": "digitizer_3d",
+      "description": "Sensor and landmarks digitized with a 3D digitizer (e.g., electromagnetic or ultrasound probe)",
+      "nominalPrecisionLevel": 3
+    },
+    {
+      "value": "optical_motion_capture",
+      "description": "Sensor and landmark positions measured with optical motion capture",
+      "nominalPrecisionLevel": 3
+    },
+    {
+      "value": "surface_scan_3d",
+      "description": "Positions extracted from a 3D surface scan or photogrammetry",
+      "nominalPrecisionLevel": 3
+    },
+    {
+      "value": "template",
+      "description": "Nominal position taken from a protocol or template; not measured on the participant",
+      "nominalPrecisionLevel": null
+    },
+    {
+      "value": "other",
+      "description": "Any other method; a Description is required",
+      "nominalPrecisionLevel": null
+    }
+  ],
+  "LandmarkIdentification": [
+    {
+      "value": "palpation",
+      "description": "Bony landmark identified by palpation"
+    },
+    {
+      "value": "visual_inspection",
+      "description": "Landmark identified visually, without palpation"
+    },
+    {
+      "value": "digitized",
+      "description": "Landmark position digitized (e.g., with a probe or scanner)"
+    },
+    {
+      "value": "surrogate",
+      "description": "Landmark inaccessible (e.g., covered by footwear); surrogate used and documented in SurrogateLandmarks"
+    }
+  ],
+  "StandardReference": [
+    {
+      "value": "SENIAM",
+      "description": "European recommendations for surface EMG electrode placement (Hermens et al., 1999)"
+    },
+    {
+      "value": "ISB",
+      "description": "ISB recommendations for anatomical and joint coordinate systems (Wu et al., 2002, 2005)"
+    },
+    {
+      "value": "ISB_IMU",
+      "description": "ISB recommendations for IMU-based joint kinematics (Cereatti et al., 2024)"
+    },
+    {
+      "value": "EEG_10_20",
+      "description": "International 10-20 system (Jasper, 1958)"
+    },
+    {
+      "value": "EEG_10_10",
+      "description": "Extended 10-10 system"
+    },
+    {
+      "value": "EEG_10_5",
+      "description": "Extended 10-5 system (Oostenveld & Praamstra, 2001)"
+    },
+    {
+      "value": "ECG_12_lead",
+      "description": "Standard electrode positions of the 12-lead ECG"
+    },
+    {
+      "value": "Mason_Likar",
+      "description": "Torso placement of limb electrodes for exercise ECG (Mason & Likar, 1966)"
+    },
+    {
+      "value": "manufacturer",
+      "description": "Placement following the instructions of the device manufacturer"
+    },
+    {
+      "value": "lab_protocol",
+      "description": "Laboratory-specific protocol; a reference or description is required"
+    },
+    {
+      "value": "none",
+      "description": "No placement standard followed"
+    }
+  ]
+}

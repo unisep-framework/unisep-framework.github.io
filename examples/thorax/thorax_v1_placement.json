@@ -1,0 +1,17 @@
+{
+  "SensorName": "ECG_V1",
+  "SensorType": "ECG electrode",
+  "BodySegment": "Torso-chest",
+  "SegmentIndex": 2,
+  "Coordinates": [
+    55,
+    100,
+    40
+  ],
+  "CoordinateUnits": "percent",
+  "MeasurementMethod": "visual_estimate",
+  "PrecisionLevel": 1,
+  "LandmarkIdentification": "palpation",
+  "StandardReference": "ECG_12_lead",
+  "Description": "V1: fourth intercostal space, right sternal border."
+}

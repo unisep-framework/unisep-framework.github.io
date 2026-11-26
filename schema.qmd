@@ -1,0 +1,50 @@
+---
+title: "Schema & vocabularies"
+format: html
+---
+
+UNISEP 0.2.0 provides a machine-readable **reference schema** for placement records and three **controlled vocabularies**. The schema is non-normative: it illustrates how a placement can be stored, while the normative definitions are the [landmark table](anatomical_table.qmd) and the [formal definition](index.qmd#formal-definition).
+
+- Reference schema (JSON Schema draft 2020-12): [`schema/v0.2/placement-record.schema.json`](schema/v0.2/placement-record.schema.json)
+- Controlled vocabularies: [`schema/v0.2/vocabularies.json`](schema/v0.2/vocabularies.json)
+- Worked examples: [Use cases](use_cases.qmd)
+
+## Conditional rules
+
+A placement record requires `BodySegment`, `Coordinates` (three values in percent, or `null` where not determined), `CoordinateUnits` (`"percent"`) and `MeasurementMethod`. Three conditional rules apply. For the paired segments (upper arm, forearm, hand, thigh, lower leg, foot), `Side` is required; for the unpaired segments (head, neck, thorax, abdomen), `Side` must be absent. If `LandmarkIdentification` is `"surrogate"`, the replacement landmarks must be documented in `SurrogateLandmarks`, mapping each landmark abbreviation to its surrogate. If `MeasurementMethod` is `"other"`, a `Description` is required. No keys other than those defined in the schema are allowed. Coordinates outside 0–100 % are valid. The tables below are generated from `vocabularies.json`; the repository's validation script checks that the schema enumerations match them.
+
+## Controlled vocabularies
+
+```{ojs}
+//| echo: false
+vocab = FileAttachment("schema/v0.2/vocabularies.json").json()
+```
+
+### MeasurementMethod
+
+```{ojs}
+//| echo: false
+Inputs.table(vocab.MeasurementMethod.map(d => ({
+  Value: d.value,
+  Description: d.description,
+  "Nominal precision level": d.nominalPrecisionLevel === null ? "—" : d.nominalPrecisionLevel
+})), {layout: "auto", rows: 20})
+```
+
+### LandmarkIdentification
+
+```{ojs}
+//| echo: false
+Inputs.table(vocab.LandmarkIdentification.map(d => ({Value: d.value, Description: d.description})),
+             {layout: "auto", rows: 20})
+```
+
+### StandardReference
+
+```{ojs}
+//| echo: false
+Inputs.table(vocab.StandardReference.map(d => ({Value: d.value, Description: d.description})),
+             {layout: "auto", rows: 20})
+```
+
+`StandardReference` is a free string in the schema; the values above are recommended. Vocabulary version: ${vocab.version}.
