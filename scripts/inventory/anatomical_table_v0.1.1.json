@@ -1,0 +1,548 @@
+[
+  {
+    "segment": "1",
+    "name": "Head",
+    "side": null,
+    "axes": {
+      "X": "LHJ → RHJ",
+      "Y": "Inion → Nasion",
+      "Z": "MMP → Vertex"
+    },
+    "imu": [
+      {
+        "label": "1",
+        "coords": [
+          50,
+          0,
+          50
+        ]
+      }
+    ],
+    "mocap": [
+      {
+        "label": "1",
+        "coords": [
+          100,
+          100,
+          80
+        ]
+      },
+      {
+        "label": "2",
+        "coords": [
+          0,
+          100,
+          80
+        ]
+      },
+      {
+        "label": "3",
+        "coords": [
+          100,
+          10,
+          80
+        ]
+      },
+      {
+        "label": "4",
+        "coords": [
+          0,
+          10,
+          80
+        ]
+      }
+    ]
+  },
+  {
+    "segment": "n/a",
+    "name": "Neck",
+    "side": null,
+    "axes": {
+      "X": "LMP → RMP",
+      "Y": "C7 → Jugular Notch",
+      "Z": "C7 → MMP"
+    },
+    "imu": [],
+    "mocap": []
+  },
+  {
+    "segment": "2",
+    "name": "Torso-chest",
+    "side": null,
+    "axes": {
+      "X": "LAP → RAP",
+      "Y": "C7 → Xiphoid Process (shorter axis)",
+      "Z": "C7 → Xiphoid Process (longer axis)"
+    },
+    "imu": [
+      {
+        "label": "2",
+        "coords": [
+          50,
+          100,
+          70
+        ]
+      }
+    ],
+    "mocap": [
+      {
+        "label": "5",
+        "coords": [
+          50,
+          100,
+          70
+        ]
+      },
+      {
+        "label": "A",
+        "coords": [
+          100,
+          100,
+          30
+        ]
+      },
+      {
+        "label": "B",
+        "coords": [
+          0,
+          100,
+          30
+        ]
+      }
+    ]
+  },
+  {
+    "segment": "3",
+    "name": "Abdomen",
+    "side": null,
+    "axes": {
+      "X": "Left ASIS → Right ASIS",
+      "Y": "midpoint ASIS → midpoint PSIS",
+      "Z": "Navel → Xiphoid Process"
+    },
+    "imu": [],
+    "mocap": []
+  },
+  {
+    "segment": "4",
+    "name": "Hand",
+    "side": "right",
+    "axes": {
+      "X": "RSP → USP",
+      "Y": "Dorsal → Palmar surface at the midpoint RSP-USP",
+      "Z": "MCP → midpoint RSP-USP"
+    },
+    "imu": [],
+    "mocap": [
+      {
+        "label": "10",
+        "coords": [
+          100,
+          50,
+          50
+        ]
+      }
+    ]
+  },
+  {
+    "segment": "5",
+    "name": "Hand",
+    "side": "left",
+    "axes": {
+      "X": "USP → RSP",
+      "Y": "Dorsal → Palmar surface at the midpoint RSP-USP",
+      "Z": "MCP → midpoint RSP-USP"
+    },
+    "imu": [],
+    "mocap": [
+      {
+        "label": "11",
+        "coords": [
+          0,
+          50,
+          50
+        ]
+      }
+    ]
+  },
+  {
+    "segment": "6",
+    "name": "Upper-arm",
+    "side": "right",
+    "axes": {
+      "X": "MHE → LHE",
+      "Y": "Olecranon Process → Cubital Fossa",
+      "Z": "midpoint MHE-LHE → Acromion"
+    },
+    "imu": [
+      {
+        "label": "3",
+        "coords": [
+          100,
+          50,
+          70
+        ]
+      }
+    ],
+    "mocap": [
+      {
+        "label": "6",
+        "coords": [
+          100,
+          50,
+          70
+        ]
+      },
+      {
+        "label": "C",
+        "coords": [
+          100,
+          50,
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "segment": "7",
+    "name": "Upper-arm",
+    "side": "left",
+    "axes": {
+      "X": "MHE → LHE",
+      "Y": "Olecranon Process → Cubital Fossa",
+      "Z": "midpoint MHE-LHE → Acromion"
+    },
+    "imu": [
+      {
+        "label": "4",
+        "coords": [
+          0,
+          50,
+          70
+        ]
+      }
+    ],
+    "mocap": [
+      {
+        "label": "7",
+        "coords": [
+          0,
+          50,
+          50
+        ]
+      },
+      {
+        "label": "D",
+        "coords": [
+          0,
+          50,
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "segment": "8",
+    "name": "Forearm",
+    "side": "right",
+    "axes": {
+      "X": "RSP → USP",
+      "Y": "Right-hand rule (limits: Olecranon Process → Cubital Fossa)",
+      "Z": "midpoint RSP-USP → LHE"
+    },
+    "imu": [
+      {
+        "label": "5",
+        "coords": [
+          100,
+          50,
+          30
+        ]
+      }
+    ],
+    "mocap": [
+      {
+        "label": "8",
+        "coords": [
+          100,
+          50,
+          70
+        ]
+      },
+      {
+        "label": "E",
+        "coords": [
+          50,
+          100,
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "segment": "9",
+    "name": "Forearm",
+    "side": "left",
+    "axes": {
+      "X": "USP → RSP",
+      "Y": "Right-hand rule (limits: Olecranon Process → Cubital Fossa)",
+      "Z": "midpoint RSP-USP → LHE"
+    },
+    "imu": [
+      {
+        "label": "6",
+        "coords": [
+          0,
+          50,
+          30
+        ]
+      }
+    ],
+    "mocap": [
+      {
+        "label": "9",
+        "coords": [
+          0,
+          50,
+          50
+        ]
+      },
+      {
+        "label": "E",
+        "coords": [
+          50,
+          100,
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "segment": "10",
+    "name": "Thigh",
+    "side": "right",
+    "axes": {
+      "X": "FME → FLE",
+      "Y": "Popliteal Fossa → Patellar Anterior Surface",
+      "Z": "midpoint FME-FLE → Greater Trochanter"
+    },
+    "imu": [
+      {
+        "label": "7",
+        "coords": [
+          100,
+          50,
+          50
+        ]
+      }
+    ],
+    "mocap": [
+      {
+        "label": "12",
+        "coords": [
+          100,
+          50,
+          50
+        ]
+      }
+    ]
+  },
+  {
+    "segment": "11",
+    "name": "Thigh",
+    "side": "left",
+    "axes": {
+      "X": "FLE → FME",
+      "Y": "Popliteal Fossa → Patellar Anterior Surface",
+      "Z": "midpoint FME-FLE → Greater Trochanter"
+    },
+    "imu": [
+      {
+        "label": "8",
+        "coords": [
+          0,
+          50,
+          50
+        ]
+      }
+    ],
+    "mocap": [
+      {
+        "label": "13",
+        "coords": [
+          0,
+          50,
+          50
+        ]
+      }
+    ]
+  },
+  {
+    "segment": "12",
+    "name": "Lower-leg",
+    "side": "right",
+    "axes": {
+      "X": "MM → LM",
+      "Y": "Popliteal Fossa → Patellar Anterior Surface",
+      "Z": "midpoint MM-LM → Patellar Anterior Surface"
+    },
+    "imu": [
+      {
+        "label": "9",
+        "coords": [
+          0,
+          50,
+          80
+        ]
+      },
+      {
+        "label": "11",
+        "coords": [
+          100,
+          50,
+          20
+        ]
+      }
+    ],
+    "mocap": [
+      {
+        "label": "14",
+        "coords": [
+          100,
+          50,
+          80
+        ]
+      },
+      {
+        "label": "G",
+        "coords": [
+          100,
+          50,
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "segment": "13",
+    "name": "Lower-leg",
+    "side": "left",
+    "axes": {
+      "X": "LM → MM",
+      "Y": "Popliteal Fossa → Patellar Anterior Surface",
+      "Z": "midpoint MM-LM → Patellar Anterior Surface"
+    },
+    "imu": [
+      {
+        "label": "10",
+        "coords": [
+          100,
+          50,
+          80
+        ]
+      },
+      {
+        "label": "12",
+        "coords": [
+          0,
+          50,
+          20
+        ]
+      }
+    ],
+    "mocap": [
+      {
+        "label": "15",
+        "coords": [
+          0,
+          50,
+          80
+        ]
+      },
+      {
+        "label": "G",
+        "coords": [
+          0,
+          50,
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "segment": "14",
+    "name": "Foot",
+    "side": "right",
+    "axes": {
+      "X": "MM → LM",
+      "Y": "CT → FME",
+      "Z": "CT to MM-LM line"
+    },
+    "imu": [
+      {
+        "label": "13",
+        "coords": [
+          50,
+          60,
+          80
+        ]
+      }
+    ],
+    "mocap": [
+      {
+        "label": "16",
+        "coords": [
+          50,
+          100,
+          40
+        ]
+      },
+      {
+        "label": "18",
+        "coords": [
+          50,
+          0,
+          50
+        ]
+      }
+    ]
+  },
+  {
+    "segment": "15",
+    "name": "Foot",
+    "side": "left",
+    "axes": {
+      "X": "LM → MM",
+      "Y": "CT → FME",
+      "Z": "CT to MM-LM line"
+    },
+    "imu": [
+      {
+        "label": "14",
+        "coords": [
+          50,
+          60,
+          80
+        ]
+      }
+    ],
+    "mocap": [
+      {
+        "label": "17",
+        "coords": [
+          50,
+          100,
+          40
+        ]
+      },
+      {
+        "label": "19",
+        "coords": [
+          50,
+          0,
+          50
+        ]
+      }
+    ]
+  }
+]
