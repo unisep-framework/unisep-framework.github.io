@@ -1,0 +1,60 @@
+---
+title: "Use cases"
+format: html
+---
+
+The three examples below show how UNISEP placements are recorded in practice. Every JSON block on this page is included directly from the corresponding file in the [`examples/`](https://github.com/unisep-framework/unisep-framework.github.io/tree/main/examples) folder of the repository, which is validated automatically against the [reference schema](schema.qmd).
+
+## EMG-BIDS: hierarchical coordinate systems
+
+A high-density surface EMG grid on the vastus lateralis is described in a device-internal child coordinate system in millimetres (`gridVL`), which is anchored to the UNISEP right-thigh coordinate system in percent (`thigh`). In the child file, `ParentCoordinateSystem` holds the space label of the parent (`thigh`, not `space-thigh`), and `AnchorElectrode` / `AnchorCoordinates` give the position of one grid electrode in parent coordinates. BIDS 1.11 admits only `"Other"` for `EMGCoordinateSystem`, so the UNISEP definition is carried in `EMGCoordinateSystemDescription`. `MeasurementMethod` and `PrecisionLevel` are UNISEP extension keys, not BIDS keys.
+
+Parent coordinate system — [`examples/emg_bids/space-thigh_coordsystem.json`](examples/emg_bids/space-thigh_coordsystem.json):
+
+```json
+{{< include examples/emg_bids/space-thigh_coordsystem.json >}}
+```
+
+Child coordinate system — [`examples/emg_bids/space-gridVL_coordsystem.json`](examples/emg_bids/space-gridVL_coordsystem.json):
+
+```json
+{{< include examples/emg_bids/space-gridVL_coordsystem.json >}}
+```
+
+A complete minimal BIDS dataset using these two files is available in [`examples/bids_minimal/`](https://github.com/unisep-framework/unisep-framework.github.io/tree/main/examples/bids_minimal).
+
+## Cross-modal foot example
+
+Optical motion-capture markers and an IMU on the right foot (segment 14), placed on a shoe. Because the calcaneal tuberosity (CT) is covered by the shoe, a surrogate landmark is used and documented in `SurrogateLandmarks`.
+
+```{ojs}
+//| echo: false
+foot = FileAttachment("examples/foot/foot_placements.json").json()
+Inputs.table(Object.entries(foot.UNISEPPlacements).map(([name, r]) => ({
+  Sensor: name,
+  Type: r.SensorType,
+  "X (%)": r.Coordinates[0],
+  "Y (%)": r.Coordinates[1],
+  "Z (%)": r.Coordinates[2],
+  "Measurement method": r.MeasurementMethod,
+  Registration: r.LandmarkIdentification +
+    (r.SurrogateLandmarks ? " (" + Object.entries(r.SurrogateLandmarks).map(([k, v]) => k + ": " + v).join("; ") + ")" : "") +
+    (r.Description ? " — " + r.Description : "")
+})), {layout: "auto"})
+```
+
+[`examples/foot/foot_placements.json`](examples/foot/foot_placements.json):
+
+```json
+{{< include examples/foot/foot_placements.json >}}
+```
+
+## Thorax example: ECG electrode V1
+
+Electrode V1 of the standard 12-lead ECG in the thorax coordinate system (segment 2). The placement procedure follows the ECG standard (`StandardReference: "ECG_12_lead"`); UNISEP only encodes the resulting position. The coordinate values are approximate (precision Level 1, visual estimate).
+
+[`examples/thorax/thorax_v1_placement.json`](examples/thorax/thorax_v1_placement.json):
+
+```json
+{{< include examples/thorax/thorax_v1_placement.json >}}
+```
