@@ -1,0 +1,10 @@
+{
+  "SensorName": "IMU_thigh_R",
+  "SensorType": "IMU",
+  "BodySegment": "Thigh",
+  "Side": "right",
+  "Coordinates": [100, null, 50],
+  "CoordinateUnits": "percent",
+  "MeasurementMethod": "visual_estimate",
+  "PrecisionLevel": 1
+}

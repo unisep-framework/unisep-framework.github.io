@@ -1,0 +1,10 @@
+{
+  "SensorName": "EMG_lowerleg_L",
+  "SensorType": "EMG electrode",
+  "BodySegment": "Lower-leg",
+  "Side": "left",
+  "Coordinates": [-20, 50, 120],
+  "CoordinateUnits": "percent",
+  "MeasurementMethod": "tape_measure",
+  "PrecisionLevel": 2
+}

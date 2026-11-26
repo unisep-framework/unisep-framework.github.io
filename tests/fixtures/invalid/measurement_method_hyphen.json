@@ -1,0 +1,7 @@
+{
+  "BodySegment": "Thigh",
+  "Side": "right",
+  "Coordinates": [100, 50, 50],
+  "CoordinateUnits": "percent",
+  "MeasurementMethod": "tape-measure"
+}

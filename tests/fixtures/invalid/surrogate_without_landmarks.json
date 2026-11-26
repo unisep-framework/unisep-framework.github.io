@@ -1,0 +1,8 @@
+{
+  "BodySegment": "Foot",
+  "Side": "right",
+  "Coordinates": [50, 0, 50],
+  "CoordinateUnits": "percent",
+  "MeasurementMethod": "visual_estimate",
+  "LandmarkIdentification": "surrogate"
+}

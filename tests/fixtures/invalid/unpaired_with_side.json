@@ -1,0 +1,7 @@
+{
+  "BodySegment": "Head",
+  "Side": "left",
+  "Coordinates": [50, 0, 50],
+  "CoordinateUnits": "percent",
+  "MeasurementMethod": "visual_estimate"
+}

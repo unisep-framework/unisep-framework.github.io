@@ -1,0 +1,8 @@
+{
+  "EMGCoordinateSystem": "Other",
+  "EMGCoordinateUnits": "mm",
+  "EMGCoordinateSystemDescription": "Device-internal coordinate system of an HD-sEMG grid.",
+  "ParentCoordinateSystem": "space-thigh",
+  "AnchorElectrode": "E6",
+  "AnchorCoordinates": [20, 100, 50]
+}
