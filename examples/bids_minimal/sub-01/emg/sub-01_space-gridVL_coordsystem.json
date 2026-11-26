@@ -1,0 +1,10 @@
+{
+  "EMGCoordinateSystem": "Other",
+  "EMGCoordinateUnits": "mm",
+  "EMGCoordinateSystemDescription": "Device-internal coordinate system of the HD-sEMG grid on vastus lateralis; origin at electrode E1, x along grid rows, y along grid columns.",
+  "ParentCoordinateSystem": "thigh",
+  "AnchorElectrode": "E6",
+  "AnchorCoordinates": [20, 100, 50],
+  "MeasurementMethod": "tape_measure",
+  "PrecisionLevel": 2
+}

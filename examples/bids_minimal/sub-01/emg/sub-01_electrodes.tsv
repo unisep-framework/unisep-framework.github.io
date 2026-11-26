@@ -1,0 +1,9 @@
+name	x	y	z	coordinate_system	type	group
+E1	0	0	n/a	gridVL	surface	gridVL
+E2	8	0	n/a	gridVL	surface	gridVL
+E3	16	0	n/a	gridVL	surface	gridVL
+E4	24	0	n/a	gridVL	surface	gridVL
+E5	0	8	n/a	gridVL	surface	gridVL
+E6	8	8	n/a	gridVL	surface	gridVL
+E7	16	8	n/a	gridVL	surface	gridVL
+E8	24	8	n/a	gridVL	surface	gridVL

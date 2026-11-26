@@ -1,0 +1,20 @@
+{
+  "TaskName": "demo",
+  "TaskDescription": "Three brief isometric knee-extension contractions (synthetic).",
+  "EMGPlacementScheme": "Measured",
+  "EMGReference": "Monopolar; reference electrode on the right patella",
+  "SamplingFrequency": 1000,
+  "PowerLineFrequency": 50,
+  "RecordingType": "continuous",
+  "SoftwareFilters": "n/a",
+  "HardwareFilters": {
+    "Bandpass": {
+      "Low cutoff (Hz)": 10,
+      "High cutoff (Hz)": 500
+    }
+  },
+  "EMGChannelCount": 8,
+  "RecordingDuration": 10,
+  "Manufacturer": "n/a (synthetic data)",
+  "InterelectrodeDistance": 8
+}

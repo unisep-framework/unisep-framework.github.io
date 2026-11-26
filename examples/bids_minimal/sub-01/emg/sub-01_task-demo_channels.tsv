@@ -1,0 +1,9 @@
+name	type	units	signal_electrode	reference	group	target_muscle
+E1	EMG	uV	E1	REF	gridVL	vastus lateralis
+E2	EMG	uV	E2	REF	gridVL	vastus lateralis
+E3	EMG	uV	E3	REF	gridVL	vastus lateralis
+E4	EMG	uV	E4	REF	gridVL	vastus lateralis
+E5	EMG	uV	E5	REF	gridVL	vastus lateralis
+E6	EMG	uV	E6	REF	gridVL	vastus lateralis
+E7	EMG	uV	E7	REF	gridVL	vastus lateralis
+E8	EMG	uV	E8	REF	gridVL	vastus lateralis
